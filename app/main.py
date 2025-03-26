@@ -12,9 +12,9 @@ def create_person_list(people: list) -> list:
                    for person in people]
 
     for person_dict, person in zip(people, person_list):
-        if person_dict.get("wife"):
+        if person_dict.get("wife") is not None:
             person.wife = Person.people[person_dict.get("wife")]
 
-        if person_dict.get("husband"):
+        if person_dict.get("husband") is not None:
             person.husband = Person.people[person_dict.get("husband")]
     return person_list
